@@ -12,6 +12,10 @@ h1 {
     margin: 50px;
 }
 
+input {
+    width: 300px;
+}
+
 #calc {
     margin: 30px;
 }
