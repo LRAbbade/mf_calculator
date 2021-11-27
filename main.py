@@ -1,12 +1,8 @@
-from flask import Flask, render_template
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
 
-@app.route('/')
+@app.get("/")
 def index():
-    return render_template('index.html')
-
-
-if __name__ == '__main__':
-    app.run()
+    return "MF Calculator"
