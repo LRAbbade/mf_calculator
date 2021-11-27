@@ -1,9 +1,23 @@
-version: "3.5"
+version: "3.9"
 
-services: 
-    app:
-        build: .
+services:
+    backend:
+        build:
+            context: ./backend
+        restart: always
         ports: 
-            - 80:8000
+            - "8000:8000"
         volumes: 
-            - .:/usr/src/app
+            - ./backend/:/usr/src/app/
+        env_file: 
+            - .env
+    # frontend:
+    #     build:
+    #         context: ./frontend
+    #     restart: always
+    #     depends_on:
+    #         - backend
+    #     volumes: 
+    #         - ./frontend/:/usr/src/app/
+    #     ports: 
+    #         - "4200:4200"

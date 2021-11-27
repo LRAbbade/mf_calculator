@@ -1,1 +1,1 @@
-web: gunicorn main:app
+web: uvicorn backend.main:app --workers 4
